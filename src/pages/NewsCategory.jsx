@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { Container } from "react-bootstrap";
 import { getNewsCategoryEndpoint } from "../api/endpoints";
 import { useFetch } from "../utils/hooks/useFetch";
+import Layout from "../components/Layout";
 
 function NewsCategory() {
   const { categoryId } = useParams();
@@ -10,9 +11,9 @@ function NewsCategory() {
   const data = useFetch(url);
   console.log(data);
   return (
-    <div>
+    <Layout>
       <Container>{categoryId}</Container>
-    </div>
+    </Layout>
   );
 }
 
