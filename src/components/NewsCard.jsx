@@ -1,10 +1,11 @@
 import React from "react";
 import { Card } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 function NewsCard(props) {
-  const { imgSrc, title, description } = props;
+  const { imgSrc, title, description, id } = props;
   return (
-    <div>
+    <Link to={`/news/${encodeURIComponent(id)}`}>
       <Card style={{ width: "18rem" }}>
         <Card.Img variant="top" src={imgSrc} />
         <Card.Body>
@@ -12,7 +13,7 @@ function NewsCard(props) {
           <Card.Text>{description}</Card.Text>
         </Card.Body>
       </Card>
-    </div>
+    </Link>
   );
 }
 

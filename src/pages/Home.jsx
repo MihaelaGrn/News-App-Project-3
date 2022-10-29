@@ -4,45 +4,29 @@ import { useFetch } from "../utils/hooks/useFetch";
 import { getNewsCategoryEndpoint } from "../api/endpoints";
 import Layout from "../components/Layout";
 import NewsCardList from "../components/NewsCardList";
+import { getNewsList } from "../api/adaptors";
 
 function Home() {
   const footballUrl = getNewsCategoryEndpoint("football", 1, 6);
   const footballData = useFetch(footballUrl);
-  console.log(footballData);
+  const footballNewsList = getNewsList(footballData);
 
-  const techUrl = getNewsCategoryEndpoint("technology", 2, 6);
+  const techUrl = getNewsCategoryEndpoint("technology", 1, 6);
   const techData = useFetch(techUrl);
-  console.log(techData);
-
-  const newsList = [
-    {
-      id: "test1",
-      imgSrc:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiHFAAeHEYde_aXLL9qZT58-e2UmYlxQCEWg&usqp=CAU",
-      title: "Meciul de aseara",
-      description: "bla bla",
-    },
-    {
-      id: "test2",
-      imgSrc:
-        "https://e0.365dm.com/22/07/768x432/skysports-efl-ball_5848969.jpg?20220729160849",
-      title: "Meciul de alaltaieri",
-      description: "haha",
-    },
-  ];
+  const techNewsList = getNewsList(techData);
 
   return (
     <Layout>
-      <section>
+      <section className="my-5">
         <Container>
-          <h1>Tech</h1>
-          <NewsCardList newsList={newsList} />
+          <h1 className="mb-5 pt-3">Tech</h1>
+          <NewsCardList newsList={techNewsList} />
         </Container>
       </section>
-      <section>
+      <section className="my-5">
         <Container>
-          <h1>Football</h1>
-          <NewsCardList newsList={newsList} />
+          <h1 className="mb-5 pt-3">Football</h1>
+          <NewsCardList newsList={footballNewsList} />
         </Container>
       </section>
     </Layout>

@@ -4,3 +4,8 @@ export function getNewsCategoryEndpoint(category, page = 1, pageSize = 20) {
   const querryParams = `?api-key=${API_KEY}&section=${category}&page-size=${pageSize}&page=${page}&show-fields=all`;
   return `https://content.guardianapis.com/search${querryParams}`;
 }
+
+export function getNewsDetailsEndpoint(newsId) {
+  const queryParams = `?api-key=${API_KEY}&show-fields=all`;
+  return `https://content.guardianapis.com/${newsId}${queryParams}`;
+}

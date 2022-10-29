@@ -1,0 +1,12 @@
+.newsDetails {
+  text-align: left;
+}
+
+.newsDetails img {
+  width: 100%;
+  height: auto;
+}
+
+.newsDetails a {
+  color: var(--text--secondary);
+}
