@@ -25,6 +25,8 @@ export function getNewsDetails(apiResponse) {
     description: rawNewsDetails.fields.trailText,
     image: rawNewsDetails.fields.main,
     content: rawNewsDetails.fields.body,
+    author: rawNewsDetails.fields.byline,
+    date: rawNewsDetails.webPublicationDate,
   };
   return adaptedNewsDetails;
 }

@@ -28,6 +28,7 @@ ul {
 a {
   display: block;
   text-decoration: none;
+  color: inherit;
 }
 
 /* Customizam Bootstrap: */

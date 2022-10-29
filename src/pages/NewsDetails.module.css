@@ -8,5 +8,11 @@
 }
 
 .newsDetails a {
-  color: var(--text--secondary);
+  color: var(--text-secondary);
+  display: inline;
+}
+
+.newsDetails .btnStyle {
+  background-color: #2bb686;
+  border-color: #2bb686;
 }
