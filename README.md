@@ -2,7 +2,8 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-The news app allows you to be up to date with the latest news in Tech, Football and Environment fields. Enjoy reading!
+The news app allows you to remain up to date with the latest news in Tech, Football and Environment fields. Enjoy reading!
+Netlify link: https://it-school-news-mg.netlify.app/
 
 ## Available Scripts
 
