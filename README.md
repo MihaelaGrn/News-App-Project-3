@@ -2,6 +2,8 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+The news app allows you to be up to date with the latest news in Tech, Football and Environment fields. Enjoy reading!
+
 ## Available Scripts
 
 In the project directory, you can run:
