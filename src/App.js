@@ -7,6 +7,7 @@ import NewsDetails from "./pages/NewsDetails";
 import Favorites from "./pages/Favorites";
 import { useReducer } from "react";
 import { initialState, favoritesReducer } from "./store/favorites/reducer";
+// import { useLocalStorage } from "./utils/hooks/useLocalStorage";
 
 function App() {
   //initializare state

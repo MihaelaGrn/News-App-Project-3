@@ -10,7 +10,7 @@ function NewsCardList(props) {
       <Row>
         {newsList.map((news) => {
           return (
-            <Col md={4} xs={12} lg={4} key={news.id}>
+            <Col md={4} xs={12} lg={4} key={news.id} className="mb-4">
               <NewsCard
                 id={news.id}
                 imgSrc={news.imgSrc}

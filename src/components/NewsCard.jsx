@@ -3,6 +3,7 @@ import { Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { FavoritesContext } from "../store/favorites/context";
 import { removeFromFavorites } from "../store/favorites/actions";
+import styles from "./NewsCard.module.css";
 
 function NewsCard(props) {
   const { imgSrc, title, description, id, isFavorites = false } = props;
@@ -13,7 +14,9 @@ function NewsCard(props) {
   };
 
   return (
-    <Card style={{ width: "18rem" }}>
+    <Card
+      className={`${styles.newsCard} h-100 d-flex flex-column justify-content-between align-items-center`}
+    >
       <Link to={`/news/${encodeURIComponent(id)}`}>
         <Card.Img variant="top" src={imgSrc} />
         <Card.Body>

@@ -27,8 +27,8 @@ function NewsCategory() {
     case "football":
       title = "Football";
       break;
-    case "fashion":
-      title = "Fashion";
+    case "environment":
+      title = "Environment";
       break;
     default:
       break;
