@@ -3,7 +3,8 @@ import { Container, Row, Col } from "react-bootstrap";
 import NewsCard from "./NewsCard";
 
 function NewsCardList(props) {
-  const { newsList } = props;
+  const { newsList, isFavorites = false } = props;
+
   return (
     <Container>
       <Row>
@@ -15,6 +16,7 @@ function NewsCardList(props) {
                 imgSrc={news.imgSrc}
                 title={news.title}
                 description={news.description}
+                isFavorites={isFavorites}
               />
             </Col>
           );

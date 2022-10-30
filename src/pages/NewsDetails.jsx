@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useParams } from "react-router-dom";
 import { Container, Row, Col } from "react-bootstrap";
 import Layout from "../components/Layout";
@@ -8,15 +8,25 @@ import { getNewsDetails } from "../api/adaptors";
 import style from "../pages/NewsDetails.module.css";
 import Button from "react-bootstrap/Button";
 import { getFormattedDate } from "../utils/date";
+import { addToFavorites, AddToFavorites } from "../store/favorites/actions";
+import { FavoritesContext } from "../store/favorites/context";
 
 function NewsDetails() {
+  const { favoritesDispatch } = useContext(FavoritesContext);
+
   const { newsId } = useParams();
   const decodedUrl = decodeURIComponent(newsId);
   const url = getNewsDetailsEndpoint(decodedUrl);
   const newsData = useFetch(url);
   const adaptedNewsData = getNewsDetails(newsData);
-  const { title, image, description, content, date, author } = adaptedNewsData;
+  const { title, image, description, content, date, author, thumbnail } =
+    adaptedNewsData;
   const formattedDate = getFormattedDate(date);
+
+  const handleAddToFavorites = (product) => {
+    const actionResult = addToFavorites(product);
+    favoritesDispatch(actionResult);
+  };
 
   return (
     <Layout>
@@ -31,7 +41,17 @@ function NewsDetails() {
                 <p>{author}</p>
                 <p className="mb-0">{formattedDate}</p>
               </div>
-              <Button className={`${style.btnStyle}`}>
+              <Button
+                className={`${style.btnStyle}`}
+                onClick={() => {
+                  handleAddToFavorites({
+                    id: newsId,
+                    imgSrc: thumbnail,
+                    title,
+                    description,
+                  });
+                }}
+              >
                 Adauga la favorite
               </Button>
             </div>

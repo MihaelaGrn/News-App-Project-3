@@ -4,6 +4,7 @@ import { FavoritesContext } from "./store/favorites/context";
 import Home from "./pages/Home";
 import NewsCategory from "./pages/NewsCategory";
 import NewsDetails from "./pages/NewsDetails";
+import Favorites from "./pages/Favorites";
 import { useReducer } from "react";
 import { initialState, favoritesReducer } from "./store/favorites/reducer";
 
@@ -25,6 +26,7 @@ function App() {
           <Route path="/" exact element={<Home />} />
           <Route path="/category/:categoryId" element={<NewsCategory />} />
           <Route path="news/:newsId" element={<NewsDetails />} />
+          <Route path="favorites" element={<Favorites />} />
           <Route path="*" element={<Page404 />} />
         </Routes>
       </FavoritesContext.Provider>
